@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Currency exchange</title>
+</head>
+
+<body>
+    <p class="clock" id="tod"></p>
+    <div class="navigation">
+        <div class="buttons">
+            <button data-rate="30.50" id="euro">Euro</button>
+            <button data-rate="26.30" id="dolar">Dollar USA</button>
+            <button data-rate="6.60" id="zloty">Złoty</button>
+        </div>
+        <div class="total">
+            <p id="EuroVal" class="total__item"></p>
+            <p id="DolarVal" class="total__item"></p>
+            <p id="ZlotyVal" class="total__item"></p>
+        </div>
+    </div>
+
+    <input id="areaNum" type="number" placeholder="Вкажіть суму..." class="input">
+    <input id="butt" type="button" value="ОК" class="buttonDown" />
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
