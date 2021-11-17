@@ -13,21 +13,23 @@ fetch(url)
     .then((data) => {
         areaNum.oninput = function () {
             let val = document.getElementById('areaNum').value;
-            zloty.onclick = function () {
-                let res = val / data[33].rate;
-                document.getElementById('ZlotyVal').innerText = res.toFixed(2) + 'Zł';
-                document.getElementById('ZlotyVal').style.opacity = 1;
-            };
-            euro.onclick = function () {
-                let res = val / data[32].rate;
-                document.getElementById('EuroVal').innerText = res.toFixed(2) + '€';
-                document.getElementById('EuroVal').style.opacity = 1;
-            };
-            dolar.onclick = function () {
-                let res = val / data[26].rate;
-                document.getElementById('DolarVal').innerText = res.toFixed(2) + '$';
-                document.getElementById('DolarVal').style.opacity = 1;
-            };
+            if (val >= 1) {
+                zloty.onclick = function () {
+                    let res = val / data[33].rate;
+                    document.getElementById('ZlotyVal').innerText = res.toFixed(2) + 'Zł';
+                    document.getElementById('ZlotyVal').style.opacity = 1;
+                };
+                euro.onclick = function () {
+                    let res = val / data[32].rate;
+                    document.getElementById('EuroVal').innerText = res.toFixed(2) + '€';
+                    document.getElementById('EuroVal').style.opacity = 1;
+                };
+                dolar.onclick = function () {
+                    let res = val / data[26].rate;
+                    document.getElementById('DolarVal').innerText = res.toFixed(2) + '$';
+                    document.getElementById('DolarVal').style.opacity = 1;
+                };
+            } if (val < 1) alert('incorrect value, try again');
         }
     })
     .catch(console.error);
